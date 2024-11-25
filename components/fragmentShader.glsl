@@ -1,24 +1,39 @@
+// Fragment Shader for Animated Gradient with Noise
+#pragma glslify: noise = require('glsl-noise/simplex/3d')
+
+// Uniforms
+uniform float uTime;
+uniform float uSpeed;
+uniform vec3 uColourPalette[4]; // Gradient colors
+uniform float uUvScale; // UV scaling
+uniform float uUvDistortionIterations; // Number of distortion iterations
+uniform float uUvDistortionIntensity; // Intensity of UV distortion
+
 varying vec2 vUv;
 
-uniform vec3 uColors[3];
-uniform float uTime;
-uniform float uAmplitude;
-uniform float uSpeed;
+// Cosine gradient function (from thi.ng/color gradients)
+vec3 cosineGradientColor(in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d) {
+    return clamp(a + b * cos(6.28318 * (c * t + d)), 0.0, 1.0);
+}
 
 void main() {
-    vec2 centeredUv = 2.0 * vUv - vec2(1.0);
+    vec2 uv = vUv;
 
-    centeredUv += uAmplitude * 0.4 * sin(1.0 * centeredUv.yx + vec2(1.2, 3.4) + uTime * uSpeed);
-    centeredUv += uAmplitude * 0.2 * sin(5.2 * centeredUv.yx + vec2(3.5, 0.4) + uTime * uSpeed);
-    centeredUv += uAmplitude * 0.3 * sin(3.5 * centeredUv.yx + vec2(1.2, 3.1) + uTime * uSpeed);
-    centeredUv += uAmplitude * 1.6 * sin(4.0 * centeredUv.yx + vec2(0.8, 2.4) + uTime * uSpeed);
+    // Scale UV coordinates
+    uv *= uUvScale;
 
-    vec3 baseColor = uColors[0];
-
-    for (int i = 0; i < 3; i++) {
-        float influence = 0.5 + 0.5 * cos(float(i) * 2.0 * length(centeredUv) - uTime);
-        baseColor += uColors[i] * influence;
+    // Apply UV distortion using noise
+    for (float i = 0.0; i < uUvDistortionIterations; i++) {
+        uv += noise(vec3(uv - i * 0.2, (uTime * uSpeed) + i * 32.0)) * uUvDistortionIntensity;
     }
-    
-    gl_FragColor = vec4(baseColor, 1.0);
+
+    // Compute noise value for gradient input
+    float colourInput = noise(vec3(uv, sin((uTime * uSpeed)))) * 0.5 + 0.5;
+
+    // Compute gradient color using the cosine gradient
+    vec3 colour = cosineGradientColor(colourInput, uColourPalette[0], uColourPalette[1], uColourPalette[2], uColourPalette[3]);
+
+    // Output the final color
+    gl_FragColor = vec4(colour, 1.0);
 }
+
