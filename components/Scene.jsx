@@ -23,19 +23,19 @@ function Plane() {
 
   // Leva controls 
   const { speed, scale, distortionIterations, distortionIntensity } = useControls({
-    speed: { label: 'Speed', value: 0.5, min: 0.01, max: 2.0, step: 0.05,},
-    scale: { label: 'Scale', value: 1, min: 0.1, max: 2.0, step: 0.1,},
-    distortionIterations : { label: 'DistortionIterations', value: 6, min: 0, max: 10.0, step: 0.1,},
-    distortionIntensity : { label: 'DistortionIntensity', value: 0.3, min: 0.1, max: 1.0, step: 0.1,}
+    speed: { label: 'Speed', value: 0.1, min: 0.01, max: 2.0, step: 0.05,},
+    scale: { label: 'Scale', value: 0.2, min: 0.1, max: 2.0, step: 0.1,},
+    distortionIterations : { label: 'DistortionIterations', value: 5, min: 0, max: 10.0, step: 0.1,},
+    distortionIntensity : { label: 'DistortionIntensity', value: 0.5, min: 0.1, max: 1.0, step: 0.1,}
   });
 
   // Set up shader uniforms
   const uniforms = useMemo(() => ({
     uTime: { value: 0.0 },
-    uSpeed: { value: 1.0 },
-    uUvScale: { value: 1 },
-    uUvDistortionIterations: { value: 6 },
-    uUvDistortionIntensity: { value: 0.3 },
+    uSpeed: { value: 0.1 },
+    uUvScale: { value: 0.2 },
+    uUvDistortionIterations: { value: 4.9 },
+    uUvDistortionIntensity: { value: 0.5 },
     uColourPalette: { value: DEFAULT_COLOUR_PALETTE }, // Static color palette
   }), []);
 
