@@ -4,17 +4,45 @@ import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 import { Vector3 } from "three";
 import { COSINE_GRADIENTS } from '@thi.ng/color';
-import fragmentShader from 'raw-loader!glslify-loader!./fragmentShader.glsl';
-import vertexShader from 'raw-loader!glslify-loader!./vertexShader.glsl';
+import fragmentShader from 'raw-loader!glslify-loader!../shader/fragmentShader.glsl';
+import vertexShader from 'raw-loader!glslify-loader!../shader/vertexShader.glsl';
 
 // Default color palette
 // const DEFAULT_COLOUR_PALETTE = COSINE_GRADIENTS['yellow-purple-magenta'].map((color) => new Vector3(...color));
 
+// Default Smile theme + more Pink + Orange ` toothpaste frequency
+// const DEFAULT_COLOUR_PALETTE = [
+//   new Vector3(1.528, 0.468, 0.758, 1.0), // First color
+//   new Vector3(-2.052, 0.190, -0.215, 1.0), // Second color
+//   new Vector3(-1.882, -6.283, -2.043, 1.0), // Third color
+//   new Vector3(-2.462, -0.583, -2.803, 1.0), // Fourth color
+// ];
+
+
+// Default Smile theme w out orange
+// const DEFAULT_COLOUR_PALETTE = [
+//   new Vector3(0.662, 0.469, 0.894, 1.0), // First color
+//   new Vector3(0.573, 0.131, 0.026, 1.0), // Second color
+//   new Vector3(0.587, 0.972, 1.089, 1.0), // Third color
+//   new Vector3(3.049, 6.244, 4.676, 1.0), // Fourth color
+// ];
+
+
+// Black, hot Pink, Blue
+// const DEFAULT_COLOUR_PALETTE = [
+//   new Vector3(0.258, 0.258, 0.458, 1.0), // First color
+//   new Vector3(0.828, 0.268, 0.348, 1.0), // Second color
+//   new Vector3(1.408, 0.668, 1.388, 1.0), // Third color
+//   new Vector3(2.938, 1.018, 5.769, 1.0), // Fourth color
+// ];
+
+
+// Smile theme + orange + sky blue
 const DEFAULT_COLOUR_PALETTE = [
-  new Vector3(0.938, 0.328, 0.718, 1), // Orange (RGB: 255, 128, 0)
-  new Vector3(0.659, 0.438, 0.328, 0), // Pink (RGB: 255, 0, 128)
-  new Vector3(0.388, 0.388, 0.296, 0), // Purple (RGB: 128, 0, 255)
-  new Vector3(2.538, 2.478, 0.168, 0), // Black (RGB: 0, 0, 0)
+  new Vector3(0.998, 0.738, 0.838, 1.0), // First color
+  new Vector3(0.748, 0.218, 0.310, 1.0), // Second color
+  new Vector3(0.528, -0.442, 1.186, 1.0), // Third color
+  new Vector3(0.868, -0.362, 0.995, 1.0), // Fourth color
 ];
 
 function Plane() {
