@@ -2,6 +2,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image';
+import ExampleIcon from '../public/smile.svg';
 
 const Scene = dynamic(() => import("@/components/Scene"), {
   loading : () => <p></p>,
@@ -11,25 +12,14 @@ const Scene = dynamic(() => import("@/components/Scene"), {
 export default function Home() {
   return (
     <main className="relative h-screen w-screen">
-      {/* Scene container */}
       <div className='shader h-screen w-screen '>
         <Scene />
       </div>
-
-      {/* Noise overlay */}
+      <div id="box" className="absolute inset-0 pointer-events-none"></div>
       <div className="absolute inset-0 z-10 pointer-events-none w-full h-full flex justify-center items-center">
-        <p className='text-white lol text-[30vw] mix-blend-difference font-extrabold'>smile</p>
+        {/* <ExampleIcon className="p-36 text-blue-500" /> */}
+
       </div>
     </main>
   );
 }
-
-// export default function Home() {
-//   return (
-//     <main className="relative h-screen w-screen">
-//       <div className='shader h-screen w-screen '>
-//         <Scene />
-//       </div>
-//     </main>
-//   );
-// }
