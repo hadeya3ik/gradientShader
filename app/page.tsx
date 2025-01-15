@@ -1,17 +1,22 @@
 'use client';
+
+import NavBar from '@/Components/NavBar'
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image';
 import ExampleIcon from '../public/smile.svg';
 
-const Scene = dynamic(() => import("@/components/Scene"), {
-  loading : () => <p></p>,
-  ssr :false
-},);
+const Scene = dynamic(() => import("@/Components/Scene"), {
+  loading: () => <div>Loading...</div>, // Customize this fallback
+  ssr: false, // If you don't need server-side rendering
+});
 
 export default function Home() {
   return (
+    <> 
+    <NavBar/>
     <main className="relative h-screen w-screen">
+     
       <div className='shader h-screen w-screen '>
         <Scene />
       </div>
@@ -21,5 +26,6 @@ export default function Home() {
 
       </div>
     </main>
+    </>
   );
 }

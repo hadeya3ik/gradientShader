@@ -1,0 +1,9 @@
+<svg  viewBox="0 0 163 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="39.5" cy="39.5" r="37.5" fill="#D5EEEB" stroke="black" stroke-width="4"/>
+<circle cx="51.5" cy="39.5" r="20.5" fill="black" stroke="black" stroke-width="4"/>
+<circle cx="123.5" cy="39.5" r="37.5" fill="#D5EEEB" stroke="black" stroke-width="4"/>
+<path d="M22.5 84.5C43.5 100.833 111 108.5 135 84.5" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<circle cx="112.5" cy="39.5" r="20.5" fill="black" stroke="black" stroke-width="4"/>
+<path d="M45.5 128L42.5 94.5L54 98.5L45.5 128Z" fill="white" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<path d="M110.5 130.5L113.5 97L102 101L110.5 130.5Z" fill="white" stroke="black" stroke-width="5" stroke-linecap="round"/>
+</svg>
