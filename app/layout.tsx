@@ -4,8 +4,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Hadeya Ikram",
-  description: "Hadeya Ikram",
+  title: "UW Smile Club",
+  description: "University of Waterloo's Smile Club",
 };
 
 const ppNeueMontreal = localfont({
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ppNeueMontreal.className}`}>{children}</body>
+      <body className={`bg-[#191818] text-[#e6e5e5] ${ppNeueMontreal.className}`}>{children}</body>
     </html>
   );
 }

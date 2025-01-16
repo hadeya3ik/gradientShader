@@ -1,14 +1,17 @@
 'use client';
 
-import NavBar from '@/Components/NavBar'
+import NavBar from '@/components/NavBar'
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Image from 'next/image';
 import ExampleIcon from '../public/smile.svg';
+import Faq from '@/components/home/Faq';
+import Join from '@/components/home/Join';
+import Footer from '@/components/Footer';
 
-const Scene = dynamic(() => import("@/Components/Scene"), {
+const Scene = dynamic(() => import("@/components/Scene"), {
   loading: () => <div>Loading...</div>, // Customize this fallback
-  ssr: false, // If you don't need server-side rendering
+  ssr: false, 
 });
 
 export default function Home() {
@@ -17,7 +20,7 @@ export default function Home() {
     <NavBar/>
     <main className="relative h-screen w-screen">
      
-      <div className='shader h-screen w-screen '>
+      <div className='shader h-screen w-screen'>
         <Scene />
       </div>
       <div id="box" className="absolute inset-0 pointer-events-none"></div>
@@ -26,6 +29,9 @@ export default function Home() {
 
       </div>
     </main>
+    <Faq />
+    <Join />
+    <Footer />
     </>
   );
 }

@@ -4,24 +4,18 @@ import dynamic from 'next/dynamic'
 import NavBar from '@/components/NavBar'
 import Image from 'next/image';
 import ExampleIcon from '../public/smile.svg';
-import Join from '@/components/home/Join';
-import Faq from '@/components/home/Faq';
-
-
-const Scene = dynamic(() => import("@/components/Scene"), {
-  loading : () => <p></p>,
-  ssr :false
-},);
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <>
     <NavBar/>
-    <main className="relative h-screen w-screen">
+    <main className="relative h-screen w-screen pt-[68px] ">
       <div className='shader h-screen w-screen '>
         abotu
       </div>
-
-    </main></>
+    </main>
+    <Footer/>
+    </>
   );
 }

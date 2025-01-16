@@ -72,13 +72,15 @@ function Plane() {
   const { viewport } = useThree(); 
   const mesh = useRef();
 
-  // Leva controls 
+  // Leva controls (commented out for now)
+  /*
   const { speed, scale, distortionIterations, distortionIntensity } = useControls({
     speed: { label: 'Speed', value: 0.05, min: 0.001, max: 0.2, step: 0.01,},
     scale: { label: 'Scale', value: 0.4, min: 0.1, max: 2.0, step: 0.1,},
     distortionIterations : { label: 'DistortionIterations', value: 5, min: 0, max: 10.0, step: 0.1,},
     distortionIntensity : { label: 'DistortionIntensity', value: 0.5, min: 0.1, max: 1.0, step: 0.1,}
   });
+  */
 
   // Set up shader uniforms
   const uniforms = useMemo(() => ({
@@ -93,10 +95,12 @@ function Plane() {
   // Update uniforms on every frame
   useFrame((state) => {
     uniforms.uTime.value = state.clock.getElapsedTime();
+    /* 
     uniforms.uSpeed.value = speed;
     uniforms.uUvScale.value = scale;
     uniforms.uUvDistortionIterations.value = distortionIterations;
     uniforms.uUvDistortionIntensity.value = distortionIntensity;
+    */
   });
 
   return (
