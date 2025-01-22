@@ -14,6 +14,7 @@ import Three from '@/images/Resources/Three.svg'
 import UofW from '@/images/Resources/UofW.svg'
 import React, { useState } from 'react';
 import {motion} from 'framer-motion'
+import BgGradientBlob from '../BgGradientBlob'
 
 interface cardProps {
     title: string
@@ -55,7 +56,7 @@ export default function Resources() {
     return (
       <main className='flex flex-col gap-4 py-4'>
         <div className="">
-          <h3 className="text-xl sm:text-3xl md:text-4xl whitespace-nowrap p-2">Filter by Type:</h3>
+          <h3 className="text-2xl  whitespace-nowrap p-2">Filter by Type:</h3>
           <div className="flex gap-1 sm:gap-2">
             {typeOptions.map((type) => (
                 <Button
@@ -68,7 +69,7 @@ export default function Resources() {
           </div>
         </div>
         <div className="">
-          <h3 className="text-xl sm:text-3xl md:text-4xl whitespace-nowrap p-2">Filter by Subject:</h3>
+          <h3 className="text-2xl whitespace-nowrap p-2">Filter by Subject:</h3>
           <div className="flex flex-wrap gap-1 sm:gap-2">
             {subjectOptions.map((subject) => (
                 <Button
@@ -81,39 +82,48 @@ export default function Resources() {
             ))}
           </div>
         </div>
-        <div className='flex flex-col sm:flex-row sm:gap-4'>
-          <div className='flex-1 xl:flex gap-4'>
-            <div className='flex-1 gap-4'>
-              {filteredCards.filter((item, index) => index % 4 === 0).map((item, index) => (
-                <motion.div layout key={index} className='h-fit mb-4'>
-                  <Card card={item} />
-                </motion.div>
-              ))}
+        
+        <div className='relative'>
+           
+            <div className='flex flex-col sm:flex-row sm:gap-4'>
+              {/* <div className='relativ top-0 h-screen'> */}
+              <div className=' '>
+                <BgGradientBlob/>
+              </div>
+              <div className='flex-1 xl:flex gap-4'>
+                <div className='flex-1 gap-4'>
+                  {filteredCards.filter((item, index) => index % 4 === 0).map((item, index) => (
+                    <motion.div layout key={index} className='h-fit mb-4'>
+                      <Card card={item} />
+                    </motion.div>
+                  ))}
+                </div>
+                <div className='flex-1 gap-4'>
+                  {filteredCards.filter((item, index) => index % 4 === 1).map((item, index) => (
+                    <motion.div layout key={index} className='h-fit mb-4'>
+                      <Card card={item} />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              <div className='flex-1 xl:flex gap-4'>
+                <div className='flex-1 gap-4'>
+                  {filteredCards.filter((item, index) => index % 4 === 2).map((item, index) => (
+                    <motion.div layout key={index} className='h-fit mb-4'>
+                      <Card card={item} />
+                    </motion.div>
+                  ))}
+                </div>
+                <div className='flex-1 gap-4'>
+                  {filteredCards.filter((item, index) => index % 4 === 3).map((item, index) => (
+                    <motion.div layout key={index} className='h-fit mb-4'>
+                      <Card card={item} />
+                    </motion.div>
+                  ))}
+                </div>
+              </div> 
+            
             </div>
-            <div className='flex-1 gap-4'>
-              {filteredCards.filter((item, index) => index % 4 === 1).map((item, index) => (
-                <motion.div layout key={index} className='h-fit mb-4'>
-                  <Card card={item} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <div className='flex-1 xl:flex gap-4'>
-            <div className='flex-1 gap-4'>
-              {filteredCards.filter((item, index) => index % 4 === 2).map((item, index) => (
-                <motion.div layout key={index} className='h-fit mb-4'>
-                  <Card card={item} />
-                </motion.div>
-              ))}
-            </div>
-            <div className='flex-1 gap-4'>
-              {filteredCards.filter((item, index) => index % 4 === 3).map((item, index) => (
-                <motion.div layout key={index} className='h-fit mb-4'>
-                  <Card card={item} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </div>
       </main>
     );
@@ -123,10 +133,11 @@ function Card({ card } : {card : cardProps}) {
     const { title, Icon, desc, link, color } = card;
     return (
         <a href={link} target="_blank" rel="noopener noreferrer">
-            <div style={{ background: color }} className="w-fit border-2 sm:border-4 border-black rounded-3xl">
-                <div className="max-w-48 sm:max-w-sm md:p-16 m-auto p-4">
+            {/* <div style={{ background: color }} className="w-fit border-2 sm:border-4 border-black rounded-3xl"> */}
+            <div className="bg-[#858585] bg-opacity-25 backdrop-blur-2xl w-fit rounded-3xl">
+                {/* <div className="max-w-sm sm:max-w-sm md:p-16 m-auto p-4">
                     {Icon && <Icon />}
-                </div>
+                </div> */}
                 <div className='flex flex-col gap-2 sm:gap-4 p-4'>
                     <h1 className="sm:text-3xl md:text-4xl text-2xl">{title}</h1>
                     <p className="max-w-lg text-base sm:text-2xl">{desc}</p>
@@ -140,8 +151,8 @@ function Button({ children, isSelected, onClick }: ButtonProps) {
     return (
       <button
         onClick={onClick}
-        className={`w-min sm:px-4 px-2 sm:pb-1 pb-0 rounded-full text-xl sm:text-3xl md:text-3xl border-2 sm:border-4 border-black ${
-          isSelected ? 'bg-black text-primary' : 'bg-primary text-black'
+        className={`w-min sm:px-4 px-2 sm:pb-1 pb-0 rounded-full text-xl sm:text-2xl md:text-2xl ${
+          isSelected ? 'bg-gradient-to-bl from-[#FF8FF2] to-[#71A7FF]  text-black' : 'bg-[#858585] bg-opacity-25 backdrop-blur-2xl text-white  '
         }`}
       >
         {children}

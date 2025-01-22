@@ -26,9 +26,9 @@ function ResizablePanel({children} : {children : ReactNode}) {
 function QA({q, a} : {q:string, a:string}) {
     const [expand, setExpand] = useState(false)
     return ( <div>
-        <div className='cursor-pointer flex justify-between py-2 sm:py-4 border-t-2 sm:border-t-4 border-black' onClick={() => {setExpand(!expand)}}>
+        <div className='cursor-pointer flex justify-between py-2 sm:py-4 border-t-[1px] sm:border-t-[2px] border-white' onClick={() => {setExpand(!expand)}}>
             <h1 className='text-xl sm:text-3xl md:text-5xl whitespace-nowrap'>{q}</h1>
-            <div className='h-full w-[2rem] sm:w-[3rem]'  > 
+            <div className='h-full w-[2rem] sm:w-[3rem] text-white'  > 
                 <SqaureArrow />
             </div>
         </div>
@@ -54,10 +54,10 @@ const QAlist = [
 
 function Faq() {
     return ( <main className='py-20 mx-8 sm:mx-20 flex flex-col gap-4'>
-        <h1 className='text-2xl sm:text-5xl border-2 sm:border-4 border-black rounded-full w-min px-4 py-2'>
-            FAQ
-        </h1>
-        <div className='border-b-2 sm:border-b-4 border-black '>
+        <div className="pt-40 text-4xl sm:text-5xl md:text-7xl w-full flex flex-col sm:gap-4 gap-2 items-center">
+            <h1>Frequently Asked Questions</h1>
+        </div>
+        <div className='border-b-[1px] sm:border-b-[2px] border-white '>
         {QAlist.map((item, index) =>  (
             <div key={index}> 
                 <QA q={item.q} a={item.a}/> 

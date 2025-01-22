@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localfont from "next/font/local";
 import "./globals.css";
 
-
 export const metadata: Metadata = {
   title: "UW Smile Club",
   description: "University of Waterloo's Smile Club",
@@ -36,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#191818] text-[#e6e5e5] ${ppNeueMontreal.className}`}>{children}</body>
+      <body className={`bg-[#191818] text-[#ffffff] ${ppNeueMontreal.className}`}>{children}</body>
     </html>
   );
 }

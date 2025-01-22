@@ -1,44 +1,48 @@
 import React from 'react';
-import Smile from '@/images/RainbowSmile.svg';
-import Arrow from '@/images/RainbowArrow.svg';
-import Circles from '@/images/CirclesRainbow.svg';
 
 function Join() {
   return (
     <main className="flex flex-col justify-center w-full items-center">
       <div className="pt-40 text-4xl sm:text-5xl md:text-7xl w-full flex flex-col sm:gap-4 gap-2 items-center">
-        <div className="flex gap-8">
-          <h1>Lets Paint</h1>
-          <Smile />
+        <div className="flex flex-col items-center gap-8 font-medium">
+          <h1>Lets Paint a   
+            <span className='bg-gradient-to-r from-[#FF8FF2] to-[#71A7FF] bg-clip-text text-transparent'> Happier
+            </span>,
+          </h1>
+          <h1>
+            <span className='bg-gradient-to-r from-[#FFB472] to-[#FF7AB1] bg-clip-text text-transparent'>Healthier
+            </span>, you!
+          </h1>
         </div>
-        <div className="flex gap-8">
-          <Circles className="self-end" /> 
-          <h1>a Happier,</h1>
-        </div>
-        <div className="flex text-2xl gap-4 whitespace-nowrap w-[70%]">
-          <input
-            placeholder="Enter your Email"
-            className="w-full border-2 bg-[#F4F2E3] sm:border-4 border-black rounded-full px-4 py-2"
-          />
-          <div className="border-2 sm:border-4 bg-purple-300 border-black rounded-full w-min px-4 py-2">
-            Join Us
-          </div>
-        </div>
-        <h1>Healthier you!</h1>
       </div>
       <div className="text-2xl flex pt-8 gap-4 items-start">
-        <Arrow className="md:max-w-40 max-w-20"/> 
         <ul
-          className="max-w-lg text-base sm:text-2xl"
+          className="max-w-lg text-base sm:text-2xl flex gap-8 flex-col"
           style={{ listStyleType: 'disc', paddingLeft: '20px' }}
         >
-          <li>Embrace an abundance of resources designed to sprinkle joy into your day!</li>
-          <li>Jump into a carnival of uplifting events and heartwarming mental health activities.</li>
-          <li>Be part of a compassionate SMILE squad, where everyone has each others backs.</li>
-          <li>Feeling low? Were here with open hearts and listening ears for you!</li>
-          <li>SMILE and JOIN :</li>
+          <div className='flex gap-8'>
+            <li>Embrace an abundance of resources designed to sprinkle joy into your day!</li>
+            <li>Jump into a carnival of uplifting events and heartwarming mental health activities.</li>
+          </div>
+          <div className='flex gap-8'>
+            <li>Be part of a compassionate SMILE squad, where everyone has each others backs.</li>
+            <li>Feeling low? Were here with open hearts and listening ears for you!</li>
+          </div>
         </ul>
       </div>
+      <div className="flex text-2xl gap-4 whitespace-nowrap w-[70%]">
+        <div className='w-full border-[1px] flex sm:border-[1px] bg-[#191818] border-white text-white placeholder-white rounded-full px-1 py-1'>
+          <input
+            placeholder="Enter your Email"
+            className="w-full  bg-[#191818] border-white text-white placeholder-white rounded-full px-4 focus:outline-none focus:ring-0"
+          />
+          <div className="text-[#191818] bg-gradient-to-r from-pink-400 to-blue-400 rounded-full w-min px-4 py-1">
+            Subscribe
+          </div>
+        </div>
+        </div>
+        <p>Join 1500+ Smilies</p>
+        
     </main>
   );
 }

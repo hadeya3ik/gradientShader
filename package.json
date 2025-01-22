@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "@react-three/drei": "^9.107.1",
     "@react-three/fiber": "^8.16.8",
     "@svgr/webpack": "^8.1.0",
@@ -21,6 +22,7 @@
     "raw-loader": "^4.0.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^5.4.0",
     "three": "^0.165.0"
   },
   "devDependencies": {
