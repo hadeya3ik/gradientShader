@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localfont from "next/font/local";
 import "./globals.css";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "UW Smile Club",
@@ -35,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#191818] text-[#ffffff] ${ppNeueMontreal.className}`}>{children}</body>
+      <body className={`bg-[#232222] text-[#ffffff] ${ppNeueMontreal.className}`}>{children}
+        <div className="global-overlay"></div>
+      </body>
     </html>
   );
 }

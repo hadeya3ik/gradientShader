@@ -84,7 +84,6 @@ export default function Resources() {
         </div>
         
         <div className='relative'>
-           
             <div className='flex flex-col sm:flex-row sm:gap-4'>
               {/* <div className='relativ top-0 h-screen'> */}
               <div className=' '>
