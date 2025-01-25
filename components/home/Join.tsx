@@ -3,7 +3,7 @@ import React from 'react';
 function Join() {
   return (
     <main className="flex flex-col justify-center w-full items-center -pt-40 ">
-      <div className=" text-4xl md:text-5xl w-full flex flex-col items-center">
+      <div className=" text-4xl md:text-5xl w-full flex flex-col items-center pb-4">
         <div className="flex flex-col items-center gap-2 md:gap-4 font-medium">
           <h1>Lets Paint a   
             <span className='bg-gradient-to-r from-[#FF8FF2] to-[#71A7FF] bg-clip-text text-transparent'> Happier
@@ -15,7 +15,7 @@ function Join() {
           </h1>
         </div>
       </div>
-      <div className="flex sm:max-w-lg md:max-w-2xl lg:max-w-4xl sm:px-0 px-4">
+      <div className="flex sm:max-w-lg md:max-w-2xl lg:max-w-4xl sm:px-0 px-4 pb-4">
         <ul
           className="max-w-lg flex sm:gap-8 gap-4 flex-col w-full"
           style={{ listStyleType: 'disc', paddingLeft: '20px' }}

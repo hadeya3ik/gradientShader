@@ -26,9 +26,6 @@ export default function Home() {
           <LetSmileTogether className='w-[80%] h-[70%]'/>
         </div>
       </div>
-      <div>
-
-      </div>
       <div id="box" className="absolute inset-0 pointer-events-none"></div>
       <div className="absolute inset-0 z-10 pointer-events-none w-full h-full flex justify-center items-center">
       </div>

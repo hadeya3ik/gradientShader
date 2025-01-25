@@ -42,17 +42,15 @@
   border-radius: 8px; /* Optional: adds rounded corners */
 }
 
-/* .global-overlay {
+.global-overlay {
   position: fixed;
   width: 100%;
   height: 100%;
   inset : 0; 
-  background: url('/b.png') repeat center;
+  background: url('/GoodNoise.png') repeat center;
   mix-blend-mode: overlay;
   z-index: -100;
-} */
-
-
+}
 
  @keyframes spin {
   0% {
