@@ -24,7 +24,7 @@ export default function Home() {
               <span className='font-semibold bg-gradient-to-r from-[#FFB472] to-[#FF7AB1] bg-clip-text text-transparent'> Our Mission
               </span>
             </h1>
-            <p>At SMILE (Students for Mental Health and Inner Life Enrichment), our mission is to create a vibrant and inclusive community that promotes general well-being and supports students facing life's challenges.</p>
+            <p>At SMILE (Students for Mental Health and Inner Life Enrichment), our mission is to create a vibrant and inclusive community that promotes general well-being and supports students facing life&apos;s challenges.</p>
             <p>We aim to be a ray of sunshine, offering easy access to resources that enhance mental health and enrich the inner lives of students. Through our club, we strive to foster a supportive and uplifting environment where students can find solace, share smiles, and embrace their academic journey with joy.</p>
           </div>
           <div className='flex flex-col gap-2 sm:gap-4'>

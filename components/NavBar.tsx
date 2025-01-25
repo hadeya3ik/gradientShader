@@ -10,18 +10,18 @@ function NavBar() {
   const {scrollYProgress} = useScroll();
 
   useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (latest) => {
+      const previous = previousScrollYProgress;
+      if (latest > previous) {
+        setHiddenNav(true);
+      } else {
+        setHiddenNav(false);
+      }
+      setPreviousScrollYProgress(latest);
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress, previousScrollYProgress]);
 
-    scrollYProgress.on("change", e => console.log(e))},[]); 
-
-    useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-        const previous = previousScrollYProgress;
-        if (latest > previous ) {
-          setHiddenNav(true)
-        } else {
-            setHiddenNav(false)
-        }
-        setPreviousScrollYProgress(latest);
-      });
 
   return (
     <motion.nav 
