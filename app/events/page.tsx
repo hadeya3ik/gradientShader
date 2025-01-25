@@ -17,7 +17,7 @@ export default function Home() {
         <GradientBlob />
       </div>
       <div className='w-full flex flex-col items-center text-xl sm:text-2xl md:text-3xl gap-24 relative z-10'>
-        <p>Stay Tunes for Future Events!</p>
+        <p className='font-semibold'>Stay Tuned for Future Events!</p>
       </div>
       </main> 
     <Footer/>

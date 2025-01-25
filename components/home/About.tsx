@@ -8,7 +8,7 @@ function About() {
     <div className='flex flex-col'>
         <div className='text-xl sm:text-2xl md:text-3xl pt-[64px] '>
           <div className='relative top-18 sm:top-12 flex justify-center w-full'>
-            <p className=' self-center item text-xl sm:text-2xl md:text-3xl px-20 max-w-lg sm:max-w-lg md:max-w-2xl lg:max-w-4xl'>Supporting Students to Manage Life and Mental Health Challenges @ the University of Waterloo.</p>
+            <p className='font-semibold self-center item text-xl sm:text-2xl md:text-3xl px-20 max-w-lg sm:max-w-lg md:max-w-2xl lg:max-w-4xl'>Supporting Students to Manage Life and Mental Health Challenges @ the University of Waterloo.</p>
           </div>
             <div className='w-full'>
               <WaveGradient/>

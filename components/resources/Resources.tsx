@@ -48,7 +48,7 @@ export default function Resources() {
     return (
         <main className="pt-0 flex flex-col gap-4 py-4 sm:max-w-lg md:max-w-2xl lg:max-w-4xl sm:px-0 px-4">
             <div className="pb-16 ">
-                <h3 className="text-xl sm:text-2xl md:text-3xl whitespace-nowrap p-2 pb-4">Filter by Subject:</h3>
+                <h3 className="text-xl font-semibold sm:text-2xl md:text-3xl whitespace-nowrap p-2 pb-4">Filter by Subject:</h3>
                 <div className="flex flex-wrap gap-1 sm:gap-2">
                     {subjectOptions.map((subject) => (
                         <Button

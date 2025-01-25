@@ -54,7 +54,7 @@ const QAlist = [
 
 function Faq() {
     return ( <main className=' mx-4 sm:mx-8 flex flex-col gap-8 md:gap-16 pb-20'>
-        <div className="text-3xl sm:text-4xl md:text-5xl w-full flex flex-col sm:gap-4 gap-2 items-center">
+        <div className="font-semibold text-3xl sm:text-4xl md:text-5xl w-full flex flex-col sm:gap-4 gap-2 items-center">
             <h1>Frequently Asked Questions</h1>
         </div>
         <div className='border-b-[1px] sm:border-b-[2px] border-white w-[100%] md:w-[70%] self-center'>

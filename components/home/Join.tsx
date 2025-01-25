@@ -4,7 +4,7 @@ function Join() {
   return (
     <main className="flex flex-col justify-center w-full items-center -pt-40 ">
       <div className=" text-4xl md:text-5xl w-full flex flex-col items-center pb-4">
-        <div className="flex flex-col items-center gap-2 md:gap-4 font-medium">
+        <div className="font-semibold flex flex-col items-center gap-2 md:gap-4 ">
           <h1>Lets Paint a   
             <span className='bg-gradient-to-r from-[#FF8FF2] to-[#71A7FF] bg-clip-text text-transparent'> Happier
             </span>,
@@ -42,7 +42,7 @@ function Join() {
           </div>
         </div>
         </div>
-        <p className='pt-4'>Join 1500+ Smilies</p>
+        <p className='pt-4 font-semibold'>Join 1500+ Smilies</p>
         
     </main>
   );

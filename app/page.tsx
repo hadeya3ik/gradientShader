@@ -23,7 +23,7 @@ export default function Home() {
       <div className='shader h-screen w-screen'>
         <Scene />
         <div className='absolute h-screen w-screen flex justify-center items-center top-0'>
-          <LetSmileTogether className='w-[80%] h-[70%]'/>
+          <LetSmileTogether className='w-[60%] h-[50%]'/>
         </div>
       </div>
       <div id="box" className="absolute inset-0 pointer-events-none"></div>
