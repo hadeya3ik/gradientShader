@@ -16,7 +16,7 @@ export default function Home() {
       <div className="absolute inset-0">
         <GradientBlob />
       </div>
-      <div className='w-full flex flex-col items-center gap-24 relative z-10'>
+      <div className='w-full flex flex-col items-center text-xl sm:text-2xl md:text-3xl gap-24 relative z-10'>
         <p>Stay Tunes for Future Events!</p>
       </div>
       </main> 

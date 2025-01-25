@@ -1,29 +1,29 @@
-'use client'
-import AloeBud from '@/images/Resources/AloeBud.svg'
-import DailyBean from '@/images/Resources/DailyBean.svg'
-import Finch from '@/images/Resources/Finch.svg'
-import Joyi from '@/images/Resources/Joyi.svg'
-import Mates from '@/images/Resources/Mates.svg'
-import MedCircle from '@/images/Resources/MedCircle.svg'
-import Mighty from '@/images/Resources/Mighty.svg'
-import MotivationMadness from '@/images/Resources/MotivationMadness.svg'
-import Phsyc2Go from '@/images/Resources/Phsyc2Go.svg'
-import Rootd from '@/images/Resources/Rootd.svg'
-import SciShow from '@/images/Resources/SciShow.svg'
-import Three from '@/images/Resources/Three.svg'
-import UofW from '@/images/Resources/UofW.svg'
+"use client";
+
+import AloeBud from '@/images/Resources/AloeBud.svg';
+import DailyBean from '@/images/Resources/DailyBean.svg';
+import Finch from '@/images/Resources/Finch.svg';
+import Joyi from '@/images/Resources/Joyi.svg';
+import Mates from '@/images/Resources/Mates.svg';
+import MedCircle from '@/images/Resources/MedCircle.svg';
+import Mighty from '@/images/Resources/Mighty.svg';
+import MotivationMadness from '@/images/Resources/MotivationMadness.svg';
+import Phsyc2Go from '@/images/Resources/Phsyc2Go.svg';
+import Rootd from '@/images/Resources/Rootd.svg';
+import SciShow from '@/images/Resources/SciShow.svg';
+import Three from '@/images/Resources/Three.svg';
+import UofW from '@/images/Resources/UofW.svg';
 import React, { useState } from 'react';
-import {motion} from 'framer-motion'
-import BgGradientBlob from '../BgGradientBlob'
+import { motion } from 'framer-motion';
 
 interface cardProps {
-    title: string
-    desc: string
-    Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
-    link: string
-    color: string
-    type: string[]
-    subject: string[]
+    title: string;
+    desc: string;
+    Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    link: string;
+    color: string;
+    type: string[];
+    subject: string[];
 }
 
 interface ButtonProps {
@@ -33,113 +33,83 @@ interface ButtonProps {
 }
 
 export default function Resources() {
-    const [selectedType, setSelectedType] = useState('all');
     const [selectedSubject, setSelectedSubject] = useState('all');
-    
-    const typeOptions = ['all', 'app', 'support', 'video'];
+
     const subjectOptions = ['all', 'happiness', 'motivation', 'mindfulness', 'connection', 'depression', 'counseling', 'anxiety', 'assault'];
-  
-    const handleTypeChange = (type : string) => {
-      setSelectedType(type);
+
+    const handleSubjectChange = (subject: string) => {
+        setSelectedSubject(subject);
     };
-  
-    const handleSubjectChange = (subject : string) => {
-      setSelectedSubject(subject);
-    };
-  
+
     const filteredCards = resourceCards.filter(card => {
-      const matchesType = selectedType === 'all' || card.type.includes(selectedType);
-      const matchesSubject = selectedSubject === 'all' || card.subject.includes(selectedSubject);
-      return matchesType && matchesSubject;
+        return selectedSubject === 'all' || card.subject.includes(selectedSubject);
     });
-  
+
     return (
-      <main className='flex flex-col gap-4 py-4'>
-        <div className="">
-          <h3 className="text-2xl  whitespace-nowrap p-2">Filter by Type:</h3>
-          <div className="flex gap-1 sm:gap-2">
-            {typeOptions.map((type) => (
-                <Button
-                key={type}
-                isSelected={selectedType === type}
-                onClick={() => handleTypeChange(type)}>
-                {type.charAt(0).toUpperCase() + type.slice(1)}
-                </Button>
-            ))}
-          </div>
-        </div>
-        <div className="">
-          <h3 className="text-2xl whitespace-nowrap p-2">Filter by Subject:</h3>
-          <div className="flex flex-wrap gap-1 sm:gap-2">
-            {subjectOptions.map((subject) => (
-                <Button
-                key={subject}
-                isSelected={selectedSubject === subject}
-                onClick={() => handleSubjectChange(subject)}
-                >
-                {subject.charAt(0).toUpperCase() + subject.slice(1)}
-                </Button>
-            ))}
-          </div>
-        </div>
-        
-        <div className='relative'>
-            <div className='flex flex-col sm:flex-row sm:gap-4'>
-              {/* <div className='relativ top-0 h-screen'> */}
-              <div className=' '>
-                <BgGradientBlob/>
-              </div>
-              <div className='flex-1 xl:flex gap-4'>
-                <div className='flex-1 gap-4'>
-                  {filteredCards.filter((item, index) => index % 4 === 0).map((item, index) => (
-                    <motion.div layout key={index} className='h-fit mb-4'>
-                      <Card card={item} />
-                    </motion.div>
-                  ))}
+        <main className="pt-0 flex flex-col gap-4 py-4 sm:max-w-lg md:max-w-2xl lg:max-w-4xl sm:px-0 px-4">
+            <div className="pb-16 ">
+                <h3 className="text-xl sm:text-2xl md:text-3xl whitespace-nowrap p-2 pb-4">Filter by Subject:</h3>
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                    {subjectOptions.map((subject) => (
+                        <Button
+                            key={subject}
+                            isSelected={selectedSubject === subject}
+                            onClick={() => handleSubjectChange(subject)}
+                        >
+                            {subject.charAt(0).toUpperCase() + subject.slice(1)}
+                        </Button>
+                    ))}
                 </div>
-                <div className='flex-1 gap-4'>
-                  {filteredCards.filter((item, index) => index % 4 === 1).map((item, index) => (
-                    <motion.div layout key={index} className='h-fit mb-4'>
-                      <Card card={item} />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-              <div className='flex-1 xl:flex gap-4'>
-                <div className='flex-1 gap-4'>
-                  {filteredCards.filter((item, index) => index % 4 === 2).map((item, index) => (
-                    <motion.div layout key={index} className='h-fit mb-4'>
-                      <Card card={item} />
-                    </motion.div>
-                  ))}
-                </div>
-                <div className='flex-1 gap-4'>
-                  {filteredCards.filter((item, index) => index % 4 === 3).map((item, index) => (
-                    <motion.div layout key={index} className='h-fit mb-4'>
-                      <Card card={item} />
-                    </motion.div>
-                  ))}
-                </div>
-              </div> 
-            
             </div>
-        </div>
-      </main>
+            <div className="flex flex-col sm:flex-row sm:gap-4">
+                <div className="flex-1 xl:flex gap-4">
+                    <div className="flex-1 gap-4">
+                        {filteredCards.filter((item, index) => index % 4 === 0).map((item, index) => (
+                            <motion.div layout key={index} className="h-fit mb-4">
+                                <Card card={item} />
+                            </motion.div>
+                        ))}
+                    </div>
+                    <div className="flex-1 gap-4">
+                        {filteredCards.filter((item, index) => index % 4 === 1).map((item, index) => (
+                            <motion.div layout key={index} className="h-fit mb-4">
+                                <Card card={item} />
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+                <div className="flex-1 xl:flex gap-4">
+                    <div className="flex-1 gap-4">
+                        {filteredCards.filter((item, index) => index % 4 === 2).map((item, index) => (
+                            <motion.div layout key={index} className="h-fit mb-4">
+                                <Card card={item} />
+                            </motion.div>
+                        ))}
+                    </div>
+                    <div className="flex-1 gap-4">
+                        {filteredCards.filter((item, index) => index % 4 === 3).map((item, index) => (
+                            <motion.div layout key={index} className="h-fit mb-4">
+                                <Card card={item} />
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </main>
     );
 }
 
-function Card({ card } : {card : cardProps}) {
+function Card({ card }: { card: cardProps }) {
     const { title, Icon, desc, link, color } = card;
     return (
         <a href={link} target="_blank" rel="noopener noreferrer">
-            {/* <div style={{ background: color }} className="w-fit border-2 sm:border-4 border-black rounded-3xl"> */}
-            <div className="bg-[#858585] bg-opacity-25 backdrop-blur-2xl w-fit rounded-3xl">
-                {/* <div className="max-w-sm sm:max-w-sm md:p-16 m-auto p-4">
+            <div style={{ background: color }} className="w-fit rounded-3xl">
+                <div className="max-w-32 md:p-8 m-auto p-4">
                     {Icon && <Icon />}
-                </div> */}
-                <div className='flex flex-col gap-2 sm:gap-4 p-4'>
-                    <h1 className="sm:text-3xl md:text-4xl text-2xl">{title}</h1>
-                    <p className="max-w-lg text-base sm:text-2xl">{desc}</p>
+                </div>
+                <div className="text-[#191919] flex flex-col gap-2 sm:gap-4 p-4">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl">{title}</h1>
+                    <p className="">{desc}</p>
                 </div>
             </div>
         </a>
@@ -148,17 +118,16 @@ function Card({ card } : {card : cardProps}) {
 
 function Button({ children, isSelected, onClick }: ButtonProps) {
     return (
-      <button
-        onClick={onClick}
-        className={`w-min sm:px-4 px-2 sm:pb-1 pb-0 rounded-full text-xl sm:text-2xl md:text-2xl ${
-          isSelected ? 'bg-gradient-to-bl from-[#FF8FF2] to-[#71A7FF]  text-black' : 'bg-[#858585] bg-opacity-25 backdrop-blur-2xl text-white  '
-        }`}
-      >
-        {children}
-      </button>
+        <button
+            onClick={onClick}
+            className={`w-min sm:px-4 px-2 sm:pb-1 pb-0 rounded-full text-xl  ${
+                isSelected ? 'bg-white  text-black' : 'border-white border-[1px] text-white'
+            }`}
+        >
+            {children}
+        </button>
     );
 }
-
 
 const resourceCards : cardProps[] = [
       {

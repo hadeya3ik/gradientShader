@@ -33,26 +33,26 @@ function NavBar() {
         animate={hiddenNav ? "hidden" : "visible"}
         transition={{duration:0.35, ease:"easeInOut"}}
         >
-        <div className='flex justify-between items-center p-4'>
-          <div className=' h-[60px] flex'>
+        <div className='p-2 md:p-4 flex justify-between items-top'>
+          <div className=' lg:h-[60px] md:h-[50px] h-[40px] flex'>
             <Link href="/" className='flex flex-1'>
               <Smile className="flex-1 text-white" />
             </Link>
           </div>
-          <div className='flex gap-8'>
-            <div className='text-md sm:text-3xl'>
+          <div className='flex md:gap-8 gap-4 text-lg sm:text-2xl md:text-3xl'>
+            <div className=''>
               <Link href="/resources">
-                resources
+                Resources
               </Link>
             </div>
-            <div className='text-md sm:text-3xl '>
+            <div className=''>
               <Link href="/events">
-                events
+                Events
               </Link>
             </div>
-            <div className='text-md sm:text-3xl '>
+            <div className=''>
               <Link href="/about">
-                about
+                About
               </Link>
             </div>
           </div>

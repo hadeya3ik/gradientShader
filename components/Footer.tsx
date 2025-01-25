@@ -9,8 +9,8 @@ function Footer() {
         <div className="relative z-100 w-full h-full">
           <FloorGradient />
         </div>
-        <div className="absolute z-10 bottom-0 flex w-full justify-between ">
-          <p>© 2025 Waterloo Smile Club</p>
+        <div className="absolute z-10 pb-1 p-2 md:p-4 bottom-0 flex w-full items-end justify-between ">
+          <p className='text-xs sm:text-sm '>© 2025 Waterloo Smile Club</p>
           <div className='flex gap-4'>
             <a
               href="https://www.instagram.com/uwsmileclub/"
@@ -18,7 +18,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:opacity-80"
             >
-              <FaInstagram size={42} />
+              <FaInstagram className='w-[24px] h-[24px]' />
             </a>
             <a
               href="https://discord.com/invite/QrHaD6FCjn"
@@ -26,7 +26,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="hover:opacity-80"
             >
-              <FaDiscord size={42} />
+              <FaDiscord className='w-[24px] h-[24px]'/>
             </a>
           </div>
         </div>

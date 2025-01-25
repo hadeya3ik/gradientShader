@@ -34,9 +34,9 @@ export default function Home() {
       </div>
     </main>
     <About/>
-    <Faq />
-    <SelectedJoys />
     <Join />
+    <SelectedJoys />
+    <Faq />
     <Footer />
     </>
   );

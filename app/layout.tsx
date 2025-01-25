@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-[#232222] text-[#ffffff] ${ppNeueMontreal.className}`}>{children}
+      <body className={`bg-[#191818] text-[#ffffff] ${ppNeueMontreal.className}`}>{children}
         <div className="global-overlay"></div>
       </body>
     </html>
