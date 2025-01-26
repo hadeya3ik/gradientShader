@@ -11,7 +11,7 @@ import About from '@/components/home/About';
 import LetSmileTogether from '@/images/LetsSmileTogether.svg'
 
 const Scene = dynamic(() => import("@/components/Scene"), {
-  loading: () => <div>Loading...</div>, // Customize this fallback
+  loading: () => <div className='h-screen w-screen bg-[#ff98cd]'></div>,
   ssr: false, 
 });
 
